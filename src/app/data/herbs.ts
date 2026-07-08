@@ -1,0 +1,900 @@
+export interface Herb {
+  id: string;
+  name: string;
+  scientificName: string;
+  image: string;
+  category: 'culinary' | 'medicinal' | 'aromatic' | 'ornamental';
+  difficulty: 'easy' | 'moderate' | 'difficult';
+  sunlight: 'full sun' | 'partial shade' | 'shade';
+  water: 'low' | 'moderate' | 'high';
+  growthTime: string;
+  price: number;
+  unit: string;
+  stock: string;
+  description: string;
+  benefits: string[];
+  uses: string[];
+  careInstructions: {
+    watering: string;
+    sunlight: string;
+    soil: string;
+    pruning: string;
+  };
+}
+
+export const herbs: Herb[] = [
+  {
+    id: '1',
+    name: 'Lavender',
+    scientificName: 'Lavandula angustifolia',
+    image: 'https://images.unsplash.com/photo-1653161393192-72408e915b15?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxsYXZlbmRlciUyMHBsYW50JTIwY2xvc2UlMjB1cHxlbnwxfHx8fDE3NzM4NTg1Mjl8MA&ixlib=rb-4.1.0&q=80&w=1080',
+    category: 'aromatic',
+    difficulty: 'easy',
+    sunlight: 'full sun',
+    water: 'low',
+    growthTime: '90-100 days',
+    price: 299,
+    unit: '100g',
+    stock: 'In Stock',
+    description: 'A fragrant perennial herb with purple flowers, widely used in aromatherapy and natural remedies.',
+    benefits: ['Reduces anxiety and stress', 'Improves sleep quality', 'Anti-inflammatory properties', 'Promotes wound healing'],
+    uses: ['Essential oils', 'Teas', 'Sachets', 'Cooking'],
+    careInstructions: {
+      watering: 'Water sparingly. Allow soil to dry between waterings.',
+      sunlight: 'Requires 6-8 hours of direct sunlight daily.',
+      soil: 'Well-draining, slightly alkaline soil.',
+      pruning: 'Prune after flowering to maintain shape and encourage new growth.'
+    }
+  },
+  {
+    id: '2',
+    name: 'Rosemary',
+    scientificName: 'Salvia rosmarinus',
+    image: 'https://images.unsplash.com/photo-1772238249027-fd5e3c18c6c9?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxyb3NlbWFyeSUyMGhlcmIlMjBnYXJkZW58ZW58MXx8fHwxNzczODU4NTI5fDA&ixlib=rb-4.1.0&q=80&w=1080',
+    category: 'culinary',
+    difficulty: 'easy',
+    sunlight: 'full sun',
+    water: 'low',
+    growthTime: '80-90 days',
+    price: 199,
+    unit: '50g',
+    stock: 'In Stock',
+    description: 'An aromatic evergreen shrub with needle-like leaves, highly valued in Mediterranean cuisine.',
+    benefits: ['Enhances memory and concentration', 'Rich in antioxidants', 'Supports digestion', 'Anti-bacterial properties'],
+    uses: ['Cooking', 'Herbal teas', 'Essential oils', 'Hair care'],
+    careInstructions: {
+      watering: 'Water when top inch of soil is dry.',
+      sunlight: 'Full sun exposure for at least 6 hours.',
+      soil: 'Sandy, well-draining soil with good aeration.',
+      pruning: 'Regular pruning encourages bushy growth.'
+    }
+  },
+  {
+    id: '3',
+    name: 'Mint',
+    scientificName: 'Mentha',
+    image: 'https://images.unsplash.com/photo-1648036933917-762235e009c7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtaW50JTIwbGVhdmVzJTIwZnJlc2h8ZW58MXx8fHwxNzczODU4NTMwfDA&ixlib=rb-4.1.0&q=80&w=1080',
+    category: 'culinary',
+    difficulty: 'easy',
+    sunlight: 'partial shade',
+    water: 'high',
+    growthTime: '60-70 days',
+    price: 149,
+    unit: '50g',
+    stock: 'In Stock',
+    description: 'A fast-growing herb with a refreshing flavor, perfect for beverages and culinary uses.',
+    benefits: ['Aids digestion', 'Freshens breath', 'Relieves headaches', 'Soothes irritated skin'],
+    uses: ['Teas', 'Cocktails', 'Salads', 'Desserts'],
+    careInstructions: {
+      watering: 'Keep soil consistently moist but not waterlogged.',
+      sunlight: 'Prefers partial shade, especially in hot climates.',
+      soil: 'Rich, moist soil with good drainage.',
+      pruning: 'Harvest regularly to prevent overgrowth.'
+    }
+  },
+  {
+    id: '4',
+    name: 'Basil',
+    scientificName: 'Ocimum basilicum',
+    image: 'https://images.unsplash.com/photo-1649531374356-9207b0ca497f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxiYXNpbCUyMHBsYW50JTIwZ3Jvd2luZ3xlbnwxfHx8fDE3NzM3Nzg2OTR8MA&ixlib=rb-4.1.0&q=80&w=1080',
+    category: 'culinary',
+    difficulty: 'moderate',
+    sunlight: 'full sun',
+    water: 'moderate',
+    growthTime: '60-90 days',
+    price: 179,
+    unit: '50g',
+    stock: 'In Stock',
+    description: 'A tender annual herb with a sweet, peppery flavor, essential in Italian cuisine.',
+    benefits: ['Anti-inflammatory', 'Rich in antioxidants', 'Supports cardiovascular health', 'Antibacterial properties'],
+    uses: ['Pesto', 'Pasta dishes', 'Salads', 'Pizza'],
+    careInstructions: {
+      watering: 'Water regularly, keeping soil moist but not soggy.',
+      sunlight: 'Needs 6-8 hours of direct sunlight.',
+      soil: 'Well-draining, nutrient-rich soil.',
+      pruning: 'Pinch off flower buds to promote leaf growth.'
+    }
+  },
+  {
+    id: '5',
+    name: 'Chamomile',
+    scientificName: 'Matricaria chamomilla',
+    image: 'https://images.unsplash.com/photo-1651953324518-cc925ade21c3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjaGFtb21pbGUlMjBmbG93ZXJzJTIwZmllbGR8ZW58MXx8fHwxNzczODU4NTMwfDA&ixlib=rb-4.1.0&q=80&w=1080',
+    category: 'medicinal',
+    difficulty: 'easy',
+    sunlight: 'full sun',
+    water: 'moderate',
+    growthTime: '60-65 days',
+    price: 249,
+    unit: '100g',
+    stock: 'In Stock',
+    description: 'A gentle herb with daisy-like flowers, renowned for its calming and soothing properties.',
+    benefits: ['Promotes relaxation', 'Aids sleep', 'Soothes digestive issues', 'Anti-inflammatory'],
+    uses: ['Herbal tea', 'Skin care', 'Bath soaks', 'Aromatherapy'],
+    careInstructions: {
+      watering: 'Water moderately, allowing soil to dry slightly.',
+      sunlight: 'Full sun or light shade.',
+      soil: 'Light, well-draining soil.',
+      pruning: 'Harvest flowers when fully open for tea.'
+    }
+  },
+  {
+    id: '6',
+    name: 'Thyme',
+    scientificName: 'Thymus vulgaris',
+    image: 'https://images.unsplash.com/photo-1679061584104-534b7ec4afe6?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx0aHltZSUyMGhlcmIlMjBwbGFudHxlbnwxfHx8fDE3NzM4NTg1MzF8MA&ixlib=rb-4.1.0&q=80&w=1080',
+    category: 'culinary',
+    difficulty: 'easy',
+    sunlight: 'full sun',
+    water: 'low',
+    growthTime: '70-80 days',
+    price: 189,
+    unit: '50g',
+    stock: 'In Stock',
+    description: 'A low-growing perennial with tiny aromatic leaves, perfect for seasoning and medicinal use.',
+    benefits: ['Supports respiratory health', 'Antibacterial properties', 'Boosts immune system', 'Rich in vitamins'],
+    uses: ['Cooking', 'Herbal remedies', 'Essential oils', 'Potpourri'],
+    careInstructions: {
+      watering: 'Water sparingly, drought-tolerant once established.',
+      sunlight: 'Requires full sun for best flavor.',
+      soil: 'Well-draining, slightly alkaline soil.',
+      pruning: 'Trim after flowering to maintain compact shape.'
+    }
+  },
+  {
+    id: '7',
+    name: 'Sage',
+    scientificName: 'Salvia officinalis',
+    image: 'https://images.unsplash.com/photo-1586282292546-5a23da15dfd6?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxzYWdlJTIwaGVyYiUyMGxlYXZlc3xlbnwxfHx8fDE3NzM4NTg1MzF8MA&ixlib=rb-4.1.0&q=80&w=1080',
+    category: 'medicinal',
+    difficulty: 'easy',
+    sunlight: 'full sun',
+    water: 'low',
+    growthTime: '75-80 days',
+    price: 229,
+    unit: '50g',
+    stock: 'In Stock',
+    description: 'A hardy perennial with soft, silvery leaves and a distinctive earthy flavor.',
+    benefits: ['Improves memory', 'Supports oral health', 'Anti-inflammatory', 'Antioxidant-rich'],
+    uses: ['Cooking', 'Herbal teas', 'Smudging', 'Medicinal preparations'],
+    careInstructions: {
+      watering: 'Water moderately, allow soil to dry between waterings.',
+      sunlight: 'Full sun exposure preferred.',
+      soil: 'Well-draining, sandy or loamy soil.',
+      pruning: 'Prune in spring to encourage new growth.'
+    }
+  },
+  {
+    id: '8',
+    name: 'Oregano',
+    scientificName: 'Origanum vulgare',
+    image: 'https://images.unsplash.com/photo-1587372767238-84dca9e88123?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxvcmVnYW5vJTIwcGxhbnQlMjBncmVlbnxlbnwxfHx8fDE3NzM4NTg1MzF8MA&ixlib=rb-4.1.0&q=80&w=1080',
+    category: 'culinary',
+    difficulty: 'easy',
+    sunlight: 'full sun',
+    water: 'low',
+    growthTime: '80-90 days',
+    price: 169,
+    unit: '50g',
+    stock: 'In Stock',
+    description: 'A robust perennial herb with a strong, pungent flavor, essential in Mediterranean and Mexican cuisines.',
+    benefits: ['Antibacterial properties', 'Rich in antioxidants', 'Supports digestive health', 'Anti-inflammatory'],
+    uses: ['Pizza', 'Pasta sauces', 'Marinades', 'Herbal oils'],
+    careInstructions: {
+      watering: 'Water sparingly, prefers dry conditions.',
+      sunlight: 'Full sun for best flavor development.',
+      soil: 'Well-draining, slightly alkaline soil.',
+      pruning: 'Regular harvesting promotes bushier growth.'
+    }
+  },
+  {
+    id: '9',
+    name: 'Parsley',
+    scientificName: 'Petroselinum crispum',
+    image: 'https://images.unsplash.com/photo-1666283331382-73320afe1a10?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxwYXJzbGV5JTIwaGVyYiUyMGZyZXNofGVufDF8fHx8MTc3Mzg1ODUzMXww&ixlib=rb-4.1.0&q=80&w=1080',
+    category: 'culinary',
+    difficulty: 'moderate',
+    sunlight: 'partial shade',
+    water: 'moderate',
+    growthTime: '70-90 days',
+    price: 139,
+    unit: '50g',
+    stock: 'In Stock',
+    description: 'A versatile biennial herb with bright green leaves, used as both garnish and ingredient.',
+    benefits: ['Rich in vitamins A, C, and K', 'Supports kidney health', 'Freshens breath', 'Anti-inflammatory'],
+    uses: ['Garnish', 'Salads', 'Sauces', 'Smoothies'],
+    careInstructions: {
+      watering: 'Keep soil consistently moist.',
+      sunlight: 'Partial shade to full sun.',
+      soil: 'Rich, well-draining soil.',
+      pruning: 'Harvest outer leaves first to encourage growth.'
+    }
+  },
+  {
+    id: '10',
+    name: 'Cilantro',
+    scientificName: 'Coriandrum sativum',
+    image: 'https://images.unsplash.com/photo-1755424086291-7e95c9b1b604?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjaWxhbnRybyUyMGhlcmIlMjBnYXJkZW58ZW58MXx8fHwxNzczODU4NTMxfDA&ixlib=rb-4.1.0&q=80&w=1080',
+    category: 'culinary',
+    difficulty: 'moderate',
+    sunlight: 'partial shade',
+    water: 'moderate',
+    growthTime: '50-55 days',
+    price: 129,
+    unit: '50g',
+    stock: 'In Stock',
+    description: 'A fast-growing annual herb with distinctive flavor, popular in Asian and Latin American cuisines.',
+    benefits: ['Supports digestion', 'Rich in antioxidants', 'May lower blood sugar', 'Detoxifying properties'],
+    uses: ['Salsa', 'Curries', 'Garnish', 'Chutneys'],
+    careInstructions: {
+      watering: 'Water regularly to keep soil moist.',
+      sunlight: 'Partial shade, especially in hot weather.',
+      soil: 'Light, well-draining soil.',
+      pruning: 'Harvest frequently to delay bolting.'
+    }
+  },
+  {
+    id: '11',
+    name: 'Ginger',
+    scientificName: 'Zingiber officinale',
+    image: 'https://images.unsplash.com/photo-1763019228611-b2bce31c89d5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxnaW5nZXIlMjByb290JTIwc3BpY2V8ZW58MXx8fHwxNzczNzM5OTI1fDA&ixlib=rb-4.1.0&q=80&w=1080',
+    category: 'medicinal',
+    difficulty: 'difficult',
+    sunlight: 'partial shade',
+    water: 'high',
+    growthTime: '240-300 days',
+    price: 99,
+    unit: '250g',
+    stock: 'In Stock',
+    description: 'A tropical rhizome with a warm, spicy flavor, used both as spice and medicine.',
+    benefits: ['Relieves nausea', 'Anti-inflammatory', 'Supports immune system', 'Aids digestion'],
+    uses: ['Cooking', 'Teas', 'Juices', 'Traditional medicine'],
+    careInstructions: {
+      watering: 'Keep soil consistently moist but not waterlogged.',
+      sunlight: 'Partial shade, filtered light preferred.',
+      soil: 'Rich, loamy, well-draining soil.',
+      pruning: 'Harvest rhizomes after 8-10 months.'
+    }
+  },
+  {
+    id: '12',
+    name: 'Turmeric',
+    scientificName: 'Curcuma longa',
+    image: 'https://images.unsplash.com/photo-1768729341078-9da4e0ea959e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx0dXJtZXJpYyUyMHJvb3QlMjB5ZWxsb3d8ZW58MXx8fHwxNzczODU4NTMyfDA&ixlib=rb-4.1.0&q=80&w=1080',
+    category: 'medicinal',
+    difficulty: 'difficult',
+    sunlight: 'partial shade',
+    water: 'high',
+    growthTime: '270-300 days',
+    price: 149,
+    unit: '250g',
+    stock: 'In Stock',
+    description: 'A vibrant yellow rhizome with powerful medicinal properties, staple in curry dishes.',
+    benefits: ['Powerful anti-inflammatory', 'Antioxidant-rich', 'Supports brain health', 'May prevent chronic diseases'],
+    uses: ['Curries', 'Golden milk', 'Supplements', 'Natural dye'],
+    careInstructions: {
+      watering: 'Water frequently to maintain moist soil.',
+      sunlight: 'Partial shade, avoid direct afternoon sun.',
+      soil: 'Rich, well-draining, slightly acidic soil.',
+      pruning: 'Harvest rhizomes after 9-10 months.'
+    }
+  },
+  {
+    id: '13',
+    name: 'Dill',
+    scientificName: 'Anethum graveolens',
+    image: 'https://images.unsplash.com/photo-1602943128655-57594c812741?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxkaWxsJTIwaGVyYiUyMHBsYW50fGVufDF8fHx8MTc3Mzg2MTA3NXww&ixlib=rb-4.1.0&q=80&w=1080',
+    category: 'culinary',
+    difficulty: 'easy',
+    sunlight: 'full sun',
+    water: 'moderate',
+    growthTime: '70-85 days',
+    price: 159,
+    unit: '50g',
+    stock: 'In Stock',
+    description: 'A delicate annual herb with feathery leaves and a unique tangy flavor.',
+    benefits: ['Aids digestion', 'Rich in antioxidants', 'Supports bone health', 'Anti-bacterial properties'],
+    uses: ['Pickles', 'Fish dishes', 'Salads', 'Soups'],
+    careInstructions: {
+      watering: 'Water regularly, keep soil evenly moist.',
+      sunlight: 'Full sun for at least 6 hours daily.',
+      soil: 'Well-draining, slightly acidic soil.',
+      pruning: 'Harvest leaves regularly for continued growth.'
+    }
+  },
+  {
+    id: '14',
+    name: 'Fennel',
+    scientificName: 'Foeniculum vulgare',
+    image: 'https://images.unsplash.com/photo-1772974566478-ec3503d1559a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxmZW5uZWwlMjBoZXJiJTIwZ3JlZW58ZW58MXx8fHwxNzczODYxMDc1fDA&ixlib=rb-4.1.0&q=80&w=1080',
+    category: 'culinary',
+    difficulty: 'moderate',
+    sunlight: 'full sun',
+    water: 'moderate',
+    growthTime: '65-90 days',
+    price: 179,
+    unit: '100g',
+    stock: 'In Stock',
+    description: 'A versatile herb with a sweet anise-like flavor, used in both cooking and medicine.',
+    benefits: ['Supports digestion', 'Reduces bloating', 'Rich in vitamin C', 'May improve heart health'],
+    uses: ['Teas', 'Salads', 'Roasted vegetables', 'Spice blends'],
+    careInstructions: {
+      watering: 'Water consistently, avoid letting soil dry out.',
+      sunlight: 'Requires full sun exposure.',
+      soil: 'Fertile, well-draining soil.',
+      pruning: 'Trim flowers to encourage leaf production.'
+    }
+  },
+  {
+    id: '15',
+    name: 'Lemongrass',
+    scientificName: 'Cymbopogon citratus',
+    image: 'https://images.unsplash.com/photo-1727971840721-f270bbf1aa99?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxsZW1vbmdyYXNzJTIwcGxhbnQlMjBmcmVzaHxlbnwxfHx8fDE3NzM4NjEwNzV8MA&ixlib=rb-4.1.0&q=80&w=1080',
+    category: 'aromatic',
+    difficulty: 'easy',
+    sunlight: 'full sun',
+    water: 'high',
+    growthTime: '90-120 days',
+    price: 119,
+    unit: '100g',
+    stock: 'In Stock',
+    description: 'A tropical grass with a fresh lemon scent, widely used in Asian cuisine and herbal teas.',
+    benefits: ['Relieves anxiety', 'Supports digestion', 'Anti-bacterial properties', 'May reduce inflammation'],
+    uses: ['Thai cuisine', 'Teas', 'Soups', 'Essential oils'],
+    careInstructions: {
+      watering: 'Water frequently, loves moisture.',
+      sunlight: 'Full sun with at least 6 hours daily.',
+      soil: 'Rich, loamy soil with good drainage.',
+      pruning: 'Cut stalks at ground level for harvest.'
+    }
+  },
+  {
+    id: '16',
+    name: 'Chives',
+    scientificName: 'Allium schoenoprasum',
+    image: 'https://images.unsplash.com/photo-1542794961-5647fd97e6f3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjaGl2ZXMlMjBoZXJiJTIwZ3Jvd2luZ3xlbnwxfHx8fDE3NzM4NjEwNzZ8MA&ixlib=rb-4.1.0&q=80&w=1080',
+    category: 'culinary',
+    difficulty: 'easy',
+    sunlight: 'full sun',
+    water: 'moderate',
+    growthTime: '60-75 days',
+    price: 149,
+    unit: '50g',
+    stock: 'In Stock',
+    description: 'A mild member of the onion family with hollow, grass-like leaves.',
+    benefits: ['Rich in vitamins A and C', 'Supports bone health', 'May improve heart health', 'Anti-inflammatory'],
+    uses: ['Garnish', 'Salads', 'Baked potatoes', 'Omelets'],
+    careInstructions: {
+      watering: 'Water regularly, keep soil moist.',
+      sunlight: 'Full sun to partial shade.',
+      soil: 'Rich, well-draining soil.',
+      pruning: 'Cut leaves from the outside, 2 inches from base.'
+    }
+  },
+  {
+    id: '17',
+    name: 'Bay Leaves',
+    scientificName: 'Laurus nobilis',
+    image: 'https://images.unsplash.com/photo-1717483087549-48fe752299e8?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxiYXklMjBsZWF2ZXMlMjBwbGFudHxlbnwxfHx8fDE3NzM4NjEwNzZ8MA&ixlib=rb-4.1.0&q=80&w=1080',
+    category: 'culinary',
+    difficulty: 'moderate',
+    sunlight: 'full sun',
+    water: 'moderate',
+    growthTime: '90-120 days',
+    price: 199,
+    unit: '50g',
+    stock: 'In Stock',
+    description: 'Aromatic leaves from the bay laurel tree, essential for soups and stews.',
+    benefits: ['Aids digestion', 'Anti-inflammatory', 'May regulate blood sugar', 'Rich in antioxidants'],
+    uses: ['Soups', 'Stews', 'Rice dishes', 'Marinades'],
+    careInstructions: {
+      watering: 'Water moderately, allow soil to dry slightly.',
+      sunlight: 'Full sun preferred.',
+      soil: 'Well-draining, slightly acidic soil.',
+      pruning: 'Prune to maintain shape, harvest mature leaves.'
+    }
+  },
+  {
+    id: '18',
+    name: 'Tarragon',
+    scientificName: 'Artemisia dracunculus',
+    image: 'https://images.unsplash.com/photo-1564072699250-5af00a5e6487?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx0YXJyYWdvbiUyMGhlcmIlMjBsZWF2ZXN8ZW58MXx8fHwxNzczODYxMDc3fDA&ixlib=rb-4.1.0&q=80&w=1080',
+    category: 'culinary',
+    difficulty: 'moderate',
+    sunlight: 'full sun',
+    water: 'low',
+    growthTime: '70-90 days',
+    price: 249,
+    unit: '50g',
+    stock: 'Limited Stock',
+    description: 'A perennial herb with a distinctive anise-like flavor, popular in French cuisine.',
+    benefits: ['May improve sleep', 'Supports digestion', 'Rich in antioxidants', 'May reduce inflammation'],
+    uses: ['Béarnaise sauce', 'Chicken dishes', 'Vinegar infusions', 'Egg dishes'],
+    careInstructions: {
+      watering: 'Water sparingly, drought-tolerant.',
+      sunlight: 'Full sun for best flavor.',
+      soil: 'Well-draining, sandy soil.',
+      pruning: 'Pinch back regularly to encourage bushy growth.'
+    }
+  },
+  {
+    id: '19',
+    name: 'Marjoram',
+    scientificName: 'Origanum majorana',
+    image: 'https://images.unsplash.com/photo-1726923152894-58c95d26ec7b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtYXJqb3JhbSUyMGhlcmIlMjBwbGFudHxlbnwxfHx8fDE3NzM4NjEwNzd8MA&ixlib=rb-4.1.0&q=80&w=1080',
+    category: 'culinary',
+    difficulty: 'easy',
+    sunlight: 'full sun',
+    water: 'moderate',
+    growthTime: '70-90 days',
+    price: 189,
+    unit: '50g',
+    stock: 'In Stock',
+    description: 'A sweet and mild herb, closely related to oregano but with a more delicate flavor.',
+    benefits: ['Aids digestion', 'Anti-inflammatory', 'May relieve stress', 'Supports respiratory health'],
+    uses: ['Soups', 'Salads', 'Meat dishes', 'Herbal teas'],
+    careInstructions: {
+      watering: 'Water regularly, keep soil moist but not soggy.',
+      sunlight: 'Full sun exposure.',
+      soil: 'Well-draining, neutral to alkaline soil.',
+      pruning: 'Harvest regularly to promote new growth.'
+    }
+  },
+  {
+    id: '20',
+    name: 'Cardamom',
+    scientificName: 'Elettaria cardamomum',
+    image: 'https://images.unsplash.com/photo-1602975911761-613be8dc6555?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjYXJkYW1vbSUyMHBsYW50JTIwcG9kc3xlbnwxfHx8fDE3NzM4NjEwNzd8MA&ixlib=rb-4.1.0&q=80&w=1080',
+    category: 'aromatic',
+    difficulty: 'difficult',
+    sunlight: 'partial shade',
+    water: 'high',
+    growthTime: '180-270 days',
+    price: 599,
+    unit: '100g',
+    stock: 'In Stock',
+    description: 'The "Queen of Spices" with an intense, slightly sweet flavor used in both sweet and savory dishes.',
+    benefits: ['Aids digestion', 'Freshens breath', 'May lower blood pressure', 'Anti-inflammatory'],
+    uses: ['Chai tea', 'Indian cuisine', 'Baking', 'Coffee'],
+    careInstructions: {
+      watering: 'Keep soil consistently moist.',
+      sunlight: 'Partial shade, filtered light.',
+      soil: 'Rich, well-draining, acidic soil.',
+      pruning: 'Harvest pods when they turn green and mature.'
+    }
+  },
+  {
+    id: '21',
+    name: 'Cinnamon',
+    scientificName: 'Cinnamomum verum',
+    image: 'https://images.unsplash.com/photo-1758657996518-e67bd328854e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjaW5uYW1vbiUyMHN0aWNrcyUyMGJhcmt8ZW58MXx8fHwxNzczODYxMDc3fDA&ixlib=rb-4.1.0&q=80&w=1080',
+    category: 'aromatic',
+    difficulty: 'difficult',
+    sunlight: 'full sun',
+    water: 'high',
+    growthTime: '365+ days',
+    price: 299,
+    unit: '100g',
+    stock: 'In Stock',
+    description: 'A sweet and warm spice obtained from the inner bark of cinnamon trees.',
+    benefits: ['May lower blood sugar', 'Anti-inflammatory', 'Rich in antioxidants', 'Supports heart health'],
+    uses: ['Baking', 'Teas', 'Curries', 'Desserts'],
+    careInstructions: {
+      watering: 'Water frequently, keep soil moist.',
+      sunlight: 'Full sun to partial shade.',
+      soil: 'Well-draining, sandy loam.',
+      pruning: 'Harvest bark from 2-3 year old branches.'
+    }
+  },
+  {
+    id: '22',
+    name: 'Clove',
+    scientificName: 'Syzygium aromaticum',
+    image: 'https://images.unsplash.com/photo-1733938942778-c2e510c02dc9?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjbG92ZSUyMHNwaWNlJTIwYnVkc3xlbnwxfHx8fDE3NzM4NjEwNzh8MA&ixlib=rb-4.1.0&q=80&w=1080',
+    category: 'aromatic',
+    difficulty: 'difficult',
+    sunlight: 'full sun',
+    water: 'high',
+    growthTime: '365+ days',
+    price: 399,
+    unit: '100g',
+    stock: 'In Stock',
+    description: 'Aromatic flower buds with a strong, pungent flavor used in both sweet and savory cooking.',
+    benefits: ['Relieves toothache', 'Anti-bacterial', 'Rich in antioxidants', 'May improve liver health'],
+    uses: ['Baking', 'Curries', 'Mulled wine', 'Pickling'],
+    careInstructions: {
+      watering: 'Water regularly, keep moist.',
+      sunlight: 'Full sun with some shade.',
+      soil: 'Rich, well-draining soil.',
+      pruning: 'Harvest unopened flower buds.'
+    }
+  },
+  {
+    id: '23',
+    name: 'Cumin',
+    scientificName: 'Cuminum cyminum',
+    image: 'https://images.unsplash.com/photo-1600791102844-208e695205f6?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjdW1pbiUyMHNlZWRzJTIwc3BpY2V8ZW58MXx8fHwxNzczNzYxMjIwfDA&ixlib=rb-4.1.0&q=80&w=1080',
+    category: 'culinary',
+    difficulty: 'moderate',
+    sunlight: 'full sun',
+    water: 'low',
+    growthTime: '100-120 days',
+    price: 89,
+    unit: '100g',
+    stock: 'In Stock',
+    description: 'A staple spice with a warm, earthy flavor essential in many cuisines worldwide.',
+    benefits: ['Aids digestion', 'Rich in iron', 'May improve blood sugar control', 'Anti-bacterial'],
+    uses: ['Curries', 'Chili', 'Mexican food', 'Spice blends'],
+    careInstructions: {
+      watering: 'Water sparingly, drought-tolerant.',
+      sunlight: 'Full sun exposure required.',
+      soil: 'Well-draining, sandy soil.',
+      pruning: 'Harvest seeds when pods turn brown.'
+    }
+  },
+  {
+    id: '24',
+    name: 'Fenugreek',
+    scientificName: 'Trigonella foenum-graecum',
+    image: 'https://images.unsplash.com/photo-1593754760685-5853c829bb64?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxmZW51Z3JlZWslMjBsZWF2ZXMlMjBncmVlbnxlbnwxfHx8fDE3NzM4NjEwNzh8MA&ixlib=rb-4.1.0&q=80&w=1080',
+    category: 'medicinal',
+    difficulty: 'easy',
+    sunlight: 'full sun',
+    water: 'moderate',
+    growthTime: '80-100 days',
+    price: 119,
+    unit: '100g',
+    stock: 'In Stock',
+    description: 'An herb with maple-scented leaves and seeds, used in Indian cuisine and traditional medicine.',
+    benefits: ['May increase milk production', 'Supports blood sugar control', 'Anti-inflammatory', 'Rich in fiber'],
+    uses: ['Indian curries', 'Spice blends', 'Herbal teas', 'Supplements'],
+    careInstructions: {
+      watering: 'Water moderately, avoid overwatering.',
+      sunlight: 'Full sun for best growth.',
+      soil: 'Well-draining, neutral soil.',
+      pruning: 'Harvest leaves regularly for culinary use.'
+    }
+  },
+  {
+    id: '25',
+    name: 'Mustard Seeds',
+    scientificName: 'Brassica juncea',
+    image: 'https://images.unsplash.com/photo-1640234395251-e287c19a2bc9?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtdXN0YXJkJTIwc2VlZHMlMjB5ZWxsb3d8ZW58MXx8fHwxNzczODYxMDc5fDA&ixlib=rb-4.1.0&q=80&w=1080',
+    category: 'culinary',
+    difficulty: 'easy',
+    sunlight: 'full sun',
+    water: 'moderate',
+    growthTime: '85-95 days',
+    price: 79,
+    unit: '100g',
+    stock: 'In Stock',
+    description: 'Small seeds with a sharp, pungent flavor used for making condiments and in cooking.',
+    benefits: ['Rich in minerals', 'May reduce inflammation', 'Supports heart health', 'Anti-cancer properties'],
+    uses: ['Pickles', 'Curries', 'Salad dressings', 'Condiments'],
+    careInstructions: {
+      watering: 'Water regularly, keep soil moist.',
+      sunlight: 'Full sun to partial shade.',
+      soil: 'Well-draining, fertile soil.',
+      pruning: 'Harvest seed pods when they turn brown.'
+    }
+  },
+  {
+    id: '26',
+    name: 'Holy Basil (Tulsi)',
+    scientificName: 'Ocimum tenuiflorum',
+    image: 'https://images.unsplash.com/photo-1696397279839-a2b8785c2113?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxob2x5JTIwYmFzaWwlMjB0dWxzaXxlbnwxfHx8fDE3NzM4NjEwNzl8MA&ixlib=rb-4.1.0&q=80&w=1080',
+    category: 'medicinal',
+    difficulty: 'moderate',
+    sunlight: 'full sun',
+    water: 'moderate',
+    growthTime: '75-90 days',
+    price: 199,
+    unit: '50g',
+    stock: 'In Stock',
+    description: 'A sacred herb in Indian culture with powerful adaptogenic and medicinal properties.',
+    benefits: ['Reduces stress and anxiety', 'Boosts immunity', 'Anti-inflammatory', 'Supports respiratory health'],
+    uses: ['Herbal teas', 'Ayurvedic medicine', 'Religious ceremonies', 'Supplements'],
+    careInstructions: {
+      watering: 'Water regularly, keep soil evenly moist.',
+      sunlight: 'Full sun for at least 6 hours.',
+      soil: 'Rich, well-draining soil.',
+      pruning: 'Pinch off flowers to promote leaf growth.'
+    }
+  },
+  {
+    id: '27',
+    name: 'Ashwagandha',
+    scientificName: 'Withania somnifera',
+    image: 'https://images.unsplash.com/photo-1704650312022-ed1a76dbed1b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxhc2h3YWdhbmRoYSUyMHJvb3QlMjBwb3dkZXJ8ZW58MXx8fHwxNzczODYxMDc5fDA&ixlib=rb-4.1.0&q=80&w=1080',
+    category: 'medicinal',
+    difficulty: 'moderate',
+    sunlight: 'full sun',
+    water: 'low',
+    growthTime: '150-180 days',
+    price: 449,
+    unit: '100g',
+    stock: 'In Stock',
+    description: 'A powerful adaptogenic herb used in Ayurvedic medicine to reduce stress and boost energy.',
+    benefits: ['Reduces stress and anxiety', 'Improves sleep', 'Boosts energy and stamina', 'Supports cognitive function'],
+    uses: ['Supplements', 'Herbal teas', 'Traditional medicine', 'Powders'],
+    careInstructions: {
+      watering: 'Water sparingly, drought-tolerant.',
+      sunlight: 'Full sun preferred.',
+      soil: 'Well-draining, sandy soil.',
+      pruning: 'Harvest roots after 150-180 days.'
+    }
+  },
+  {
+    id: '28',
+    name: 'Neem',
+    scientificName: 'Azadirachta indica',
+    image: 'https://images.unsplash.com/photo-1687945906634-25c66199d941?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxuZWVtJTIwbGVhdmVzJTIwcGxhbnR8ZW58MXx8fHwxNzczODYxMDgwfDA&ixlib=rb-4.1.0&q=80&w=1080',
+    category: 'medicinal',
+    difficulty: 'easy',
+    sunlight: 'full sun',
+    water: 'low',
+    growthTime: '120-150 days',
+    price: 129,
+    unit: '100g',
+    stock: 'In Stock',
+    description: 'A medicinal tree with powerful antibacterial and antifungal properties.',
+    benefits: ['Purifies blood', 'Supports skin health', 'Antibacterial and antifungal', 'Boosts immunity'],
+    uses: ['Ayurvedic medicine', 'Skin care', 'Dental care', 'Natural pesticide'],
+    careInstructions: {
+      watering: 'Water sparingly, highly drought-tolerant.',
+      sunlight: 'Full sun required.',
+      soil: 'Well-draining, sandy or loamy soil.',
+      pruning: 'Prune regularly to maintain tree shape.'
+    }
+  },
+  {
+    id: '29',
+    name: 'Aloe Vera',
+    scientificName: 'Aloe barbadensis miller',
+    image: 'https://images.unsplash.com/photo-1636687987347-06b9b7f60d68?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxhbG9lJTIwdmVyYSUyMHBsYW50JTIwZ3JlZW58ZW58MXx8fHwxNzczNzk1NDM5fDA&ixlib=rb-4.1.0&q=80&w=1080',
+    category: 'medicinal',
+    difficulty: 'easy',
+    sunlight: 'full sun',
+    water: 'low',
+    growthTime: '90-120 days',
+    price: 179,
+    unit: '1 Plant',
+    stock: 'In Stock',
+    description: 'A succulent plant with gel-filled leaves used for medicinal and cosmetic purposes.',
+    benefits: ['Soothes burns and wounds', 'Moisturizes skin', 'Supports digestive health', 'Anti-inflammatory'],
+    uses: ['Skin care', 'Hair care', 'Juices', 'Wound healing'],
+    careInstructions: {
+      watering: 'Water sparingly, allow soil to dry completely.',
+      sunlight: 'Bright indirect light or full sun.',
+      soil: 'Well-draining cactus or succulent mix.',
+      pruning: 'Remove dead leaves, harvest mature outer leaves.'
+    }
+  },
+  {
+    id: '30',
+    name: 'Peppermint',
+    scientificName: 'Mentha × piperita',
+    image: 'https://images.unsplash.com/photo-1648036933917-762235e009c7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxwZXBwZXJtaW50JTIwbGVhdmVzJTIwZnJlc2h8ZW58MXx8fHwxNzczODYxMDgwfDA&ixlib=rb-4.1.0&q=80&w=1080',
+    category: 'culinary',
+    difficulty: 'easy',
+    sunlight: 'partial shade',
+    water: 'high',
+    growthTime: '60-70 days',
+    price: 159,
+    unit: '50g',
+    stock: 'In Stock',
+    description: 'A hybrid mint with a strong menthol flavor, popular in teas and desserts.',
+    benefits: ['Relieves IBS symptoms', 'Freshens breath', 'Eases headaches', 'Improves digestion'],
+    uses: ['Teas', 'Desserts', 'Essential oils', 'Cocktails'],
+    careInstructions: {
+      watering: 'Keep soil consistently moist.',
+      sunlight: 'Partial shade to full sun.',
+      soil: 'Rich, moist, well-draining soil.',
+      pruning: 'Harvest regularly to prevent spreading.'
+    }
+  },
+  {
+    id: '31',
+    name: 'Stevia',
+    scientificName: 'Stevia rebaudiana',
+    image: 'https://images.unsplash.com/photo-1657174280282-a5a3c9d09a9c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxzdGV2aWElMjBwbGFudCUyMGxlYXZlc3xlbnwxfHx8fDE3NzM4NjEwODB8MA&ixlib=rb-4.1.0&q=80&w=1080',
+    category: 'medicinal',
+    difficulty: 'moderate',
+    sunlight: 'full sun',
+    water: 'moderate',
+    growthTime: '90-120 days',
+    price: 249,
+    unit: '50g',
+    stock: 'Limited Stock',
+    description: 'A natural sweetener plant with leaves 200-300 times sweeter than sugar.',
+    benefits: ['Zero calories', 'May lower blood sugar', 'May reduce blood pressure', 'Dental health benefits'],
+    uses: ['Natural sweetener', 'Beverages', 'Baking', 'Herbal teas'],
+    careInstructions: {
+      watering: 'Water regularly, keep soil evenly moist.',
+      sunlight: 'Full sun for 6-8 hours daily.',
+      soil: 'Well-draining, loamy soil.',
+      pruning: 'Harvest leaves before flowering for best sweetness.'
+    }
+  },
+  {
+    id: '32',
+    name: 'Moringa',
+    scientificName: 'Moringa oleifera',
+    image: 'https://images.unsplash.com/photo-1771643033515-0028fd03b708?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtb3JpbmdhJTIwbGVhdmVzJTIwZHJ1bXN0aWNrfGVufDF8fHx8MTc3Mzg2MTA4MXww&ixlib=rb-4.1.0&q=80&w=1080',
+    category: 'medicinal',
+    difficulty: 'easy',
+    sunlight: 'full sun',
+    water: 'low',
+    growthTime: '120-150 days',
+    price: 199,
+    unit: '100g',
+    stock: 'In Stock',
+    description: 'The "Miracle Tree" packed with nutrients, vitamins, and medicinal properties.',
+    benefits: ['Rich in vitamins and minerals', 'Powerful antioxidants', 'May lower blood sugar', 'Anti-inflammatory'],
+    uses: ['Powder supplements', 'Teas', 'Soups', 'Smoothies'],
+    careInstructions: {
+      watering: 'Water moderately, drought-tolerant once established.',
+      sunlight: 'Full sun required.',
+      soil: 'Well-draining, sandy or loamy soil.',
+      pruning: 'Prune regularly to encourage leaf production.'
+    }
+  },
+  {
+    id: '33',
+    name: 'Curry Leaves',
+    scientificName: 'Murraya koenigii',
+    image: 'https://images.unsplash.com/photo-1758649094570-9dc3b30ce80d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjdXJyeSUyMGxlYXZlcyUyMHBsYW50fGVufDF8fHx8MTc3Mzg2MTA4MXww&ixlib=rb-4.1.0&q=80&w=1080',
+    category: 'culinary',
+    difficulty: 'moderate',
+    sunlight: 'full sun',
+    water: 'moderate',
+    growthTime: '90-120 days',
+    price: 169,
+    unit: '50g',
+    stock: 'In Stock',
+    description: 'Aromatic leaves essential in South Indian cuisine with a unique citrusy flavor.',
+    benefits: ['Rich in antioxidants', 'Supports digestion', 'May control diabetes', 'Promotes hair health'],
+    uses: ['South Indian curries', 'Chutneys', 'Rice dishes', 'Tempering'],
+    careInstructions: {
+      watering: 'Water regularly, keep soil moist.',
+      sunlight: 'Full sun to partial shade.',
+      soil: 'Well-draining, slightly acidic soil.',
+      pruning: 'Harvest fresh leaves as needed.'
+    }
+  },
+  {
+    id: '34',
+    name: 'Garlic',
+    scientificName: 'Allium sativum',
+    image: 'https://images.unsplash.com/photo-1741518077910-d5449aaa1636?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxnYXJsaWMlMjBidWxicyUyMGNsb3Zlc3xlbnwxfHx8fDE3NzM4NjEwODF8MA&ixlib=rb-4.1.0&q=80&w=1080',
+    category: 'culinary',
+    difficulty: 'easy',
+    sunlight: 'full sun',
+    water: 'moderate',
+    growthTime: '120-150 days',
+    price: 79,
+    unit: '250g',
+    stock: 'In Stock',
+    description: 'A pungent bulb used worldwide for its distinctive flavor and medicinal properties.',
+    benefits: ['Boosts immune system', 'Supports heart health', 'Antibacterial and antiviral', 'May lower blood pressure'],
+    uses: ['Cooking', 'Marinades', 'Roasting', 'Medicinal preparations'],
+    careInstructions: {
+      watering: 'Water regularly but avoid waterlogging.',
+      sunlight: 'Full sun exposure required.',
+      soil: 'Well-draining, fertile soil.',
+      pruning: 'Harvest when leaves turn brown and dry.'
+    }
+  },
+  {
+    id: '35',
+    name: 'Black Pepper',
+    scientificName: 'Piper nigrum',
+    image: 'https://images.unsplash.com/photo-1649951806971-ad0e00408773?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxibGFjayUyMHBlcHBlciUyMHBlcHBlcmNvcm5zfGVufDF8fHx8MTc3Mzg0ODQxMHww&ixlib=rb-4.1.0&q=80&w=1080',
+    category: 'culinary',
+    difficulty: 'difficult',
+    sunlight: 'partial shade',
+    water: 'high',
+    growthTime: '180-240 days',
+    price: 199,
+    unit: '100g',
+    stock: 'In Stock',
+    description: 'The "King of Spices" with a sharp, pungent flavor used in cuisines worldwide.',
+    benefits: ['Rich in antioxidants', 'May improve digestion', 'Anti-inflammatory', 'Enhances nutrient absorption'],
+    uses: ['Seasoning', 'Marinades', 'Soups', 'Spice blends'],
+    careInstructions: {
+      watering: 'Water frequently, loves humidity.',
+      sunlight: 'Partial shade with filtered light.',
+      soil: 'Rich, well-draining, slightly acidic soil.',
+      pruning: 'Harvest berries when they turn red.'
+    }
+  },
+  {
+    id: '36',
+    name: 'Star Anise',
+    scientificName: 'Illicium verum',
+    image: 'https://images.unsplash.com/photo-1641385602317-7a2a100db0cf?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxzdGFyJTIwYW5pc2UlMjBzcGljZXxlbnwxfHx8fDE3NzM4NTc3OTR8MA&ixlib=rb-4.1.0&q=80&w=1080',
+    category: 'aromatic',
+    difficulty: 'difficult',
+    sunlight: 'partial shade',
+    water: 'high',
+    growthTime: '365+ days',
+    price: 349,
+    unit: '100g',
+    stock: 'Limited Stock',
+    description: 'A star-shaped spice with a sweet licorice-like flavor used in Asian cuisine.',
+    benefits: ['Aids digestion', 'Rich in antioxidants', 'May have antiviral properties', 'Relieves coughs'],
+    uses: ['Chinese five-spice', 'Pho', 'Teas', 'Baking'],
+    careInstructions: {
+      watering: 'Water regularly, keep soil moist.',
+      sunlight: 'Partial shade preferred.',
+      soil: 'Rich, well-draining, acidic soil.',
+      pruning: 'Harvest star-shaped fruits when mature.'
+    }
+  },
+  {
+    id: '37',
+    name: 'Saffron',
+    scientificName: 'Crocus sativus',
+    image: 'https://images.unsplash.com/photo-1709004157726-cb9df09bfce5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxzYWZmcm9uJTIwdGhyZWFkcyUyMHNwaWNlfGVufDF8fHx8MTc3Mzc4Njk3Nnww&ixlib=rb-4.1.0&q=80&w=1080',
+    category: 'aromatic',
+    difficulty: 'difficult',
+    sunlight: 'full sun',
+    water: 'low',
+    growthTime: '150-180 days',
+    price: 2499,
+    unit: '5g',
+    stock: 'Limited Stock',
+    description: 'The world\'s most expensive spice with a distinctive flavor and golden color.',
+    benefits: ['Powerful antioxidant', 'May improve mood', 'May boost memory', 'Anti-inflammatory'],
+    uses: ['Rice dishes', 'Desserts', 'Teas', 'Traditional medicine'],
+    careInstructions: {
+      watering: 'Water sparingly, prefers dry conditions.',
+      sunlight: 'Full sun required.',
+      soil: 'Well-draining, sandy loam.',
+      pruning: 'Harvest stigmas carefully when flowers bloom.'
+    }
+  },
+  {
+    id: '38',
+    name: 'Coriander Seeds',
+    scientificName: 'Coriandrum sativum',
+    image: 'https://images.unsplash.com/photo-1771541897176-44a3e01dc484?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjb3JpYW5kZXIlMjBzZWVkcyUyMHdob2xlfGVufDF8fHx8MTc3Mzg2MTA4M3ww&ixlib=rb-4.1.0&q=80&w=1080',
+    category: 'culinary',
+    difficulty: 'moderate',
+    sunlight: 'full sun',
+    water: 'moderate',
+    growthTime: '100-120 days',
+    price: 99,
+    unit: '100g',
+    stock: 'In Stock',
+    description: 'Seeds from the cilantro plant with a warm, citrusy flavor different from the leaves.',
+    benefits: ['Aids digestion', 'May lower blood sugar', 'Rich in antioxidants', 'Anti-inflammatory'],
+    uses: ['Curry powder', 'Pickling', 'Baking', 'Spice rubs'],
+    careInstructions: {
+      watering: 'Water regularly, keep soil moist.',
+      sunlight: 'Full sun exposure.',
+      soil: 'Well-draining, fertile soil.',
+      pruning: 'Allow plant to flower and form seeds before harvesting.'
+    }
+  }
+];
